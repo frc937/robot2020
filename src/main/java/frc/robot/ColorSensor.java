@@ -38,6 +38,7 @@ public class ColorSensor {
     private final Color kYellowTarget = ColorMatch.makeColor(0.361, 0.524, 0.113);
 
     public ColorSensor() {
+        System.out.println("I exist");
         m_colorMatcher.addColorMatch(kBlueTarget);
         m_colorMatcher.addColorMatch(kGreenTarget);
         m_colorMatcher.addColorMatch(kRedTarget);
