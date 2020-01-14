@@ -9,15 +9,13 @@ public class Ultrasonic extends AnalogInput{
     public Ultrasonic(int port) {
         super(port);
 
-
-    
     }
 
-    public void updateDashboard(){
+    public void updateDashboard(String key){
         int value = this.getValue();
         double display = value * Constants.MM_TO_INCH;
 
-        SmartDashboard.putNumber("Ultrasonic1", display);
+        SmartDashboard.putNumber(key, display);
 
     }
 

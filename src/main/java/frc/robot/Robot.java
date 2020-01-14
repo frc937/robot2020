@@ -25,6 +25,7 @@ public class Robot extends TimedRobot {
   private RobotContainer m_robotContainer;
   private ColorSensor colorSensor;
   private Ultrasonic ultrasonic1;
+  private Ultrasonic ultrasonic2;
 
 
   /**
@@ -38,6 +39,7 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
     colorSensor = new ColorSensor();
     ultrasonic1 = new Ultrasonic(0);
+    ultrasonic2 = new Ultrasonic(1);
     
   }
 
@@ -56,7 +58,8 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     colorSensor.matchColors();
-    ultrasonic1.updateDashboard();
+    ultrasonic1.updateDashboard("Ultrasonic1");
+    ultrasonic2.updateDashboard("Ultrasonic2");
 
   }
 
