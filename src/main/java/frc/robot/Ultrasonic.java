@@ -1,5 +1,6 @@
 package frc.robot;
 
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -14,8 +15,7 @@ public class Ultrasonic extends AnalogInput{
 
     public void updateDashboard(){
         int value = this.getValue();
-        final double CONVERSION = 0.0492126;
-        double display = value * CONVERSION;
+        double display = value * Constants.MM_TO_INCH;
 
         SmartDashboard.putNumber("Ultrasonic1", display);
 
