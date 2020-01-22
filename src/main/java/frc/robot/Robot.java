@@ -8,7 +8,6 @@
 package frc.robot;
 
 import frc.robot.ColorSensor;
-import frc.robot.Ultrasonic;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -21,11 +20,11 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
+  private Command displayUltrasonic1Command;
+  private Command displayUltrasonic2Command;
 
-  private RobotContainer m_robotContainer;
+  private RobotContainer container;
   private ColorSensor colorSensor;
-  private Ultrasonic ultrasonic1;
-  private Ultrasonic ultrasonic2;
 
 
   /**
@@ -36,11 +35,15 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
-    m_robotContainer = new RobotContainer();
+    container = new RobotContainer();
     colorSensor = new ColorSensor();
-    ultrasonic1 = new Ultrasonic(0);
-    ultrasonic2 = new Ultrasonic(1);
     
+    displayUltrasonic1Command = container.getDisplayU1Command();
+    displayUltrasonic2Command = container.getDisplayU2Command();
+
+    displayUltrasonic1Command.schedule();
+    displayUltrasonic2Command.schedule();
+
   }
 
   /**
@@ -58,8 +61,7 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     colorSensor.matchColors();
-    ultrasonic1.updateDashboard("Ultrasonic1");
-    ultrasonic2.updateDashboard("Ultrasonic2");
+
 
   }
 
@@ -79,7 +81,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+    m_autonomousCommand = container.getAutonomousCommand();
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
