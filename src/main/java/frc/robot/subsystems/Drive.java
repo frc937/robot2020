@@ -24,4 +24,20 @@ public class Drive extends SubsystemBase {
 
     }
 
+    public void moveArcade(double x, double z){
+        drivetrain.arcadeDrive(x, z, true);
+
+    }
+
+    public void moveTank(double lSpeed, double rSpeed){
+        drivetrain.tankDrive(lSpeed, rSpeed, true);
+
+    }
+
+    public void stop(){
+        driveControllerLeft.stopMotor();
+        driveControllerRight.stopMotor();
+        
+    }
+
 }
