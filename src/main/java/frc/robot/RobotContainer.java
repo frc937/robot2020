@@ -13,6 +13,7 @@ import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Ultrasonic;
+import frc.robot.subsystems.Drive;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.Command;
 
@@ -28,6 +29,7 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final Ultrasonic ultrasonic1 = new Ultrasonic(Constants.PORT_ULTRASONIC_1, "Ultrasonic 1");
   private final Ultrasonic ultrasonic2 = new Ultrasonic(Constants.PORT_ULTRASONIC_2, "Ultrasonic 2");
+  private final Drive driveSubsystem = new Drive();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
