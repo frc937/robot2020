@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -35,6 +36,7 @@ public class RobotContainer {
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
   private final DisplayUltrasonic dispUltrasonic2 = new DisplayUltrasonic(() -> ultrasonic2.updateDashboard(), ultrasonic2);
 
+  public XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -44,6 +46,31 @@ public class RobotContainer {
     configureButtonBindings();
   }
 
+  public double getLeftXValue(){
+    double leftXValue = controller.getX(Hand.kLeft);
+    return leftXValue;
+
+  }
+
+  public double getLeftYValue(){
+    double leftYValue = controller.getY(Hand.kLeft);
+    return leftYValue;
+
+  }
+
+  public double getRightXValue(){
+    double rightXValue = controller.getX(Hand.kRight);
+    return rightXValue;
+
+  }
+
+  public double getRightYValue(){
+    double rightYValue = controller.getY(Hand.kRight);
+    return rightYValue;
+
+  }
+
+
   /**
    * Use this method to define your button->command mappings.  Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
@@ -51,8 +78,9 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    
+    
   }
-
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
