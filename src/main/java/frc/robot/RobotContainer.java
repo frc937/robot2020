@@ -9,7 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
+import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -38,8 +38,9 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
   private final DisplayUltrasonic dispUltrasonic2 = new DisplayUltrasonic(() -> ultrasonic2.updateDashboard(), ultrasonic2);
+  private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
 
-  public XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
+  public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -47,30 +48,6 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-  }
-
-  public double getLeftXValue(){
-    double leftXValue = controller.getX(Hand.kLeft);
-    return leftXValue;
-
-  }
-
-  public double getLeftYValue(){
-    double leftYValue = controller.getY(Hand.kLeft);
-    return leftYValue;
-
-  }
-
-  public double getRightXValue(){
-    double rightXValue = controller.getX(Hand.kRight);
-    return rightXValue;
-
-  }
-
-  public double getRightYValue(){
-    double rightYValue = controller.getY(Hand.kRight);
-    return rightYValue;
-
   }
 
 
