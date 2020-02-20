@@ -16,9 +16,6 @@ public class Drive extends SubsystemBase {
 
     public static DifferentialDrive drivetrain;
 
-    public double arcadeX;
-    public double arcadeZ;
-
     /*
     public double leftXValue = controller.getX(Hand.kLeft);
     public double leftYValue = controller.getY(Hand.kLeft);
@@ -38,13 +35,9 @@ public class Drive extends SubsystemBase {
     }
 
     public void moveArcade(double x, double z){
-        arcadeX = RobotContainer.controller.getY(Hand.kLeft);
-        arcadeZ = RobotContainer.controller.getX(Hand.kRight);
-        x = arcadeX;
-        z = arcadeZ;
         drivetrain.arcadeDrive(x, z, true);
 
-    }
+    } static
 
     public void moveTank(double lSpeed, double rSpeed){
         drivetrain.tankDrive(lSpeed, rSpeed, true);

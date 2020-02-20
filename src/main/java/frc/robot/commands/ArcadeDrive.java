@@ -1,12 +1,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drive;
+import frc.robot.RobotContainer;
 
 public class ArcadeDrive extends CommandBase {
 
     private final Drive drivetrain;
+    private double arcadeX;
+    private double arcadeZ;
 
     public ArcadeDrive(Drive driveSubsystem) {
         drivetrain = driveSubsystem;
@@ -22,12 +26,15 @@ public class ArcadeDrive extends CommandBase {
 
     @Override
     public void execute() {
-        
+        arcadeX = RobotContainer.controller.getY(Hand.kLeft);
+        arcadeZ = RobotContainer.controller.getX(Hand.kRight);
+        drivetrain.moveArcade(arcadeX, arcadeZ);
 
     }
 
     @Override
     public void end(boolean interrupted) {
+
 
     }
 
