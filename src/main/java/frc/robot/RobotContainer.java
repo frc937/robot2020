@@ -96,4 +96,8 @@ public class RobotContainer {
     return dispUltrasonic2;
   }
 
+  public Command getDriveACommand() {
+    return driveA;
+  }
+
 }

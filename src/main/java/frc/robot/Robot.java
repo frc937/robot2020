@@ -22,6 +22,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private Command displayUltrasonic1Command;
   private Command displayUltrasonic2Command;
+  private Command defaultDriveCommand;
 
   private RobotContainer container;
   private ColorSensor colorSensor;
@@ -40,6 +41,8 @@ public class Robot extends TimedRobot {
     
     displayUltrasonic1Command = container.getDisplayU1Command();
     displayUltrasonic2Command = container.getDisplayU2Command();
+
+    defaultDriveCommand = container.getDriveACommand();
 
     displayUltrasonic1Command.schedule();
     displayUltrasonic2Command.schedule();
@@ -104,7 +107,9 @@ public class Robot extends TimedRobot {
     // this line or comment it out.
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
+    
     }
+    defaultDriveCommand.schedule();
   }
 
   /**
