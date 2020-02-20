@@ -26,8 +26,8 @@ public class ArcadeDrive extends CommandBase {
 
     @Override
     public void execute() {
-        arcadeX = RobotContainer.controller.getY(Hand.kLeft);
-        arcadeZ = RobotContainer.controller.getX(Hand.kRight);
+        arcadeZ = RobotContainer.controller.getY(Hand.kLeft);
+        arcadeX = RobotContainer.controller.getX(Hand.kRight) * -1.0;
         drivetrain.moveArcade(arcadeX, arcadeZ);
 
     }
