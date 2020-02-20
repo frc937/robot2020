@@ -5,7 +5,11 @@ import frc.robot.subsystems.Drive;
 
 public class ArcadeDrive extends CommandBase {
 
-    public ArcadeDrive(){
+    private final Drive drivetrain;
+
+    public ArcadeDrive(Drive driveSubsystem) {
+        drivetrain = driveSubsystem;
+        addRequirements(driveSubsystem);
 
     }
 
