@@ -17,6 +17,9 @@ import frc.robot.subsystems.Ultrasonic;
 import frc.robot.subsystems.Drive;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.POVButton;
+
 
 
 /**
@@ -78,7 +81,22 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    
+    JoystickButton aButton = new JoystickButton(controller, Constants.A_NUMBER);
+    JoystickButton bButton = new JoystickButton(controller, Constants.B_NUMBER);
+    JoystickButton xButton = new JoystickButton(controller, Constants.X_NUMBER);
+    JoystickButton yButton = new JoystickButton(controller, Constants.Y_NUMBER);
+    JoystickButton leftBumper = new JoystickButton(controller, Constants.LEFT_BUMPER_NUMBER);
+    JoystickButton rightBumper = new JoystickButton(controller, Constants.RIGHT_BUMPER_NUMBER);
+    JoystickButton backButton = new JoystickButton(controller, Constants.BACK_NUMBER);
+    JoystickButton startButton = new JoystickButton(controller, Constants.START_NUMBER);
+    JoystickButton leftStick = new JoystickButton(controller, Constants.LEFT_STICK_NUMBER);
+    JoystickButton rightStick = new JoystickButton(controller, Constants.RIGHT_STICK_NUMBER);
+    JoystickButton leftTrigger = new JoystickButton(controller, Constants.LEFT_TRIGGER);
+    JoystickButton rightTrigger = new JoystickButton(controller, Constants.RIGHT_TRIGGER);
+    POVButton dpadUp = new POVButton(controller, 0);
+    POVButton dpadRight = new POVButton(controller, 90);
+    POVButton dpadDown = new POVButton(controller, 180);
+    POVButton dpadLeft = new POVButton(controller, 270);
     
   }
 
