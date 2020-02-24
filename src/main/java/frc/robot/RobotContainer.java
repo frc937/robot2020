@@ -106,4 +106,12 @@ public class RobotContainer {
     return driveA;
   }
 
+  public Command getDisplayV1Command() {
+    return dispVideo1;
+  }
+
+  public Command getDisplayV2Command() {
+    return dispVideo2;
+  }
+
 }
