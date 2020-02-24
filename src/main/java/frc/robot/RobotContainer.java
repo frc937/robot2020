@@ -34,8 +34,8 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final Ultrasonic ultrasonic1 = new Ultrasonic(Constants.PORT_ULTRASONIC_1, "Ultrasonic 1");
   private final Ultrasonic ultrasonic2 = new Ultrasonic(Constants.PORT_ULTRASONIC_2, "Ultrasonic 2");
-  private final Camera camera1 = new Camera(port);
-  private final Camera camera2 = new Camera(port);
+  private final Camera camera1 = new Camera(Constants.PORT_CAMERA_1);
+  private final Camera camera2 = new Camera(Constants.PORT_CAMERA_2);
   private final Drive driveSubsystem = new Drive();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
