@@ -1,11 +1,11 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc.robot.subsystems.Camera;
 
-public class DisplayVideoFeed extends CommandBase {
+public class DisplayVideoFeed extends RunCommand {
 
-    public DisplayUltrasonic(Runnable toRun, Camera... requirements) {
+    public DisplayVideoFeed(Runnable toRun, Camera... requirements) {
         super(toRun, requirements);
 
     }
