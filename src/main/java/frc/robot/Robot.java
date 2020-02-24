@@ -22,6 +22,8 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private Command displayUltrasonic1Command;
   private Command displayUltrasonic2Command;
+  private Command displayVideo1Command;
+  private Command displayVideo2Command;
   private Command defaultDriveCommand;
 
   private RobotContainer container;
@@ -41,11 +43,17 @@ public class Robot extends TimedRobot {
     
     displayUltrasonic1Command = container.getDisplayU1Command();
     displayUltrasonic2Command = container.getDisplayU2Command();
+    
+    displayVideo1Command = container.getDisplayV1Command();
+    displayVideo2Command = container.getDisplayV2Command();
 
     defaultDriveCommand = container.getDriveACommand();
 
     displayUltrasonic1Command.schedule();
     displayUltrasonic2Command.schedule();
+
+    displayVideo1Command.schedule();
+    displayVideo2Command.schedule();
 
   }
 
