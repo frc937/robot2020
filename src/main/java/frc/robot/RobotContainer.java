@@ -42,8 +42,8 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
   private final DisplayUltrasonic dispUltrasonic2 = new DisplayUltrasonic(() -> ultrasonic2.updateDashboard(), ultrasonic2);
-  private final DisplayVideoFeed dispVideo1 = new DisplayVideoFeed(() -> camera1.startCamera(), camera1);
-  private final DisplayVideoFeed dispVideo2 = new DisplayVideoFeed(() -> camera2.startCamera(), camera2);
+  private final DisplayVideoFeed dispVideo1 = new DisplayVideoFeed(camera1, () -> camera1.startCamera());
+  private final DisplayVideoFeed dispVideo2 = new DisplayVideoFeed(camera2, () -> camera2.startCamera());
   private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
 
   public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
