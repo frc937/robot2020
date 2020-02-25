@@ -19,6 +19,7 @@ import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.Drive;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 
@@ -42,8 +43,8 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
   private final DisplayUltrasonic dispUltrasonic2 = new DisplayUltrasonic(() -> ultrasonic2.updateDashboard(), ultrasonic2);
-  private final DisplayVideoFeed dispVideo1 = new DisplayVideoFeed(camera1, () -> camera1.startCamera());
-  private final DisplayVideoFeed dispVideo2 = new DisplayVideoFeed(camera2, () -> camera2.startCamera());
+  private final InstantCommand dispVideo1 = new InstantCommand(camera1::startCamera, camera1);
+  private final InstantCommand dispVideo2 = new InstantCommand(camera2::startCamera, camera2);
   private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
 
   public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
