@@ -52,8 +52,8 @@ public class Robot extends TimedRobot {
     displayUltrasonic1Command.schedule();
     displayUltrasonic2Command.schedule();
 
-    displayVideo1Command.schedule();
-    displayVideo2Command.schedule();
+    displayVideo1Command.initialize();
+    displayVideo2Command.initialize();
 
   }
 

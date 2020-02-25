@@ -20,6 +20,8 @@ public class Camera extends SubsystemBase{
 
         camera.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
 
+        System.out.println("Camera started");
+
     }
 
 }
