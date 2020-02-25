@@ -15,6 +15,8 @@ public class Camera extends SubsystemBase{
     public void startCamera() {
         CameraServer.getInstance().startAutomaticCapture(device);
 
+        device.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
+
     }
 
 }
