@@ -7,4 +7,12 @@ public class Climb extends CommandBase {
 
     private Lift liftArm;
 
+    public Climb(Lift liftSubsystem) {
+
+        liftArm = liftSubsystem;
+
+        addRequirements(liftSubsystem);
+        
+    }
+
 }
