@@ -23,6 +23,7 @@ public final class Constants {
 
     public static final int ID_SPARKMAX_DRIVE_LEFT = 1;
     public static final int ID_SPARKMAX_DRIVE_RIGHT = 2;
+    public static final int ID_SPARKMAX_LIFT = 3;
 
     public static final int CONTROLLER_NUMBER = 0;
 
