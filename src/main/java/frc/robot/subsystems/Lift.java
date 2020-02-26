@@ -8,12 +8,15 @@ import frc.robot.Constants;
 public class Lift extends SubsystemBase {
 
     private CANSparkMax liftController;
+    private double liftSpeed;
 
     public Lift() {
 
         liftController = new CANSparkMax(Constants.ID_SPARKMAX_LIFT, MotorType.kBrushed);
 
         liftController.setInverted(false);
+
+        liftSpeed = 1.0;
 
     }
 
