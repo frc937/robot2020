@@ -25,4 +25,10 @@ public class Lift extends SubsystemBase {
 
     }
 
+    public void stop() {
+
+        
+
+    }
+
 }
