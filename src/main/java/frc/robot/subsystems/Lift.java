@@ -13,6 +13,8 @@ public class Lift extends SubsystemBase {
 
         liftController = new CANSparkMax(Constants.ID_SPARKMAX_LIFT, MotorType.kBrushed);
 
+        liftController.setInverted(false);
+
     }
 
 }
