@@ -21,4 +21,12 @@ public class Climb extends CommandBase {
 
     }
 
+    @Override
+    public void end(boolean interrupted) {
+        liftArm.stop();
+
+    }
+
+
+
 }
