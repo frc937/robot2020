@@ -16,12 +16,11 @@ public class Lift extends SubsystemBase {
 
         liftController.setInverted(false);
 
-        liftSpeed = 1.0;
-
     }
 
     public void turn() {
 
+        liftSpeed = 1.0;
         liftController.set(liftSpeed);
 
     }
