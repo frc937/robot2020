@@ -12,7 +12,13 @@ public class Climb extends CommandBase {
         liftArm = liftSubsystem;
 
         addRequirements(liftSubsystem);
-        
+
+    }
+
+    @Override
+    public void initialize() {
+        liftArm.turn();
+
     }
 
 }
