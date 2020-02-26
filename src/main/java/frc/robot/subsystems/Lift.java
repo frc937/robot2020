@@ -17,4 +17,10 @@ public class Lift extends SubsystemBase {
 
     }
 
+    public void turn() {
+
+        liftController.set(1.0);
+
+    }
+
 }
