@@ -27,6 +27,10 @@ public class Climb extends CommandBase {
 
     }
 
-
+    @Override
+    public boolean isFinished() {
+        return false;
+        
+    }
 
 }
