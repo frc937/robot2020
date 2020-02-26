@@ -28,6 +28,7 @@ public class Lift extends SubsystemBase {
     public void stop() {
 
         liftSpeed = 0.0;
+        liftController.set(liftSpeed);
 
     }
 
