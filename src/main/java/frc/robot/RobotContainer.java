@@ -13,6 +13,7 @@ import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Ultrasonic;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.Drive;
@@ -38,6 +39,7 @@ public class RobotContainer {
   private final Camera camera1 = new Camera(Constants.PORT_CAMERA_1);
   private final Camera camera2 = new Camera(Constants.PORT_CAMERA_2);
   private final Drive driveSubsystem = new Drive();
+  private final Lift liftSubsystem = new Lift();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
