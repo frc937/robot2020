@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.Climb;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -47,6 +48,7 @@ public class RobotContainer {
   private final InstantCommand dispVideo1 = new InstantCommand(camera1::startCamera, camera1);
   private final InstantCommand dispVideo2 = new InstantCommand(camera2::startCamera, camera2);
   private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
+  private final Climb climbCommand = new Climb(liftSubsystem);
 
   public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
 
