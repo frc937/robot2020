@@ -8,7 +8,9 @@ public class Lift extends SubsystemBase {
     private CANSparkMax liftController;
 
     public Lift() {
-        
+
+        liftController = new CANSparkMax(deviceID, type);
+
     }
 
 }
