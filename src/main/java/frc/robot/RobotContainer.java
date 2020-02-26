@@ -84,6 +84,8 @@ public class RobotContainer {
     POVButton dpadRight = new POVButton(controller, 90);
     POVButton dpadDown = new POVButton(controller, 180);
     POVButton dpadLeft = new POVButton(controller, 270);
+
+    dpadUp.whileHeld(climbCommand);
     
   }
 
