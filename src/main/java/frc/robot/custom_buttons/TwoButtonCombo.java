@@ -9,8 +9,8 @@ public class TwoButtonCombo extends Button {
     private int button1Number;
     private int button2Number;
 
-    public TwoButtonCombo(){
-        
+    public TwoButtonCombo(GenericHID joystick, int button1, int button2) {
+
     }
 
 }
