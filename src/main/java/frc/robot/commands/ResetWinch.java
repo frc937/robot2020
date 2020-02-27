@@ -7,4 +7,8 @@ public class ResetWinch extends CommandBase {
 
     private Lift liftWinch;
 
+    public ResetWinch(Lift subsystemLift) {
+
+    }
+
 }
