@@ -17,4 +17,10 @@ public class TwoButtonCombo extends Button {
 
     }
 
+    @Override
+    public boolean get() {
+        return controller.getRawButton(button1Number) && controller.getRawButton(button2Number);
+
+    }
+
 }
