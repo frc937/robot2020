@@ -5,7 +5,7 @@ import frc.robot.subsystems.Lift;
 
 public class ResetWinch extends CommandBase {
 
-    private Lift liftWinch;
+    private Lift liftArm;
 
     public ResetWinch(Lift subsystemLift) {
 
