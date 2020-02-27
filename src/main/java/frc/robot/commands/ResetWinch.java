@@ -15,6 +15,7 @@ public class ResetWinch extends CommandBase {
 
     }
 
+    @Override
     public void initialize() {
         liftArm.reset();
 
