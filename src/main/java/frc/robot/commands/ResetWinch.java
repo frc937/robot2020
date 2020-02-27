@@ -21,4 +21,9 @@ public class ResetWinch extends CommandBase {
 
     }
 
+    @Override
+    public void end(boolean interrupted) {
+        
+    }
+
 }
