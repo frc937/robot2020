@@ -9,6 +9,10 @@ public class ResetWinch extends CommandBase {
 
     public ResetWinch(Lift subsystemLift) {
 
+        liftArm = subsystemLift;
+
+        addRequirements(subsystemLift);
+
     }
 
 }
