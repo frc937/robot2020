@@ -27,4 +27,10 @@ public class ResetWinch extends CommandBase {
 
     }
 
+    @Override
+    public boolean isFinished() {
+        return false;
+
+    }
+
 }
