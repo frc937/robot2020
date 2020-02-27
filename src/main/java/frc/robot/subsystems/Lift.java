@@ -32,4 +32,8 @@ public class Lift extends SubsystemBase {
 
     }
 
+    public void reset() {
+
+    }
+
 }
