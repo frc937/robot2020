@@ -90,6 +90,7 @@ public class RobotContainer {
     TwoButtonCombo aAndB = new TwoButtonCombo(controller, Constants.A_NUMBER, Constants.B_NUMBER);
 
     dpadUp.whileHeld(climbCommand);
+    aAndB.whenHeld(liftResetCommand);
     
   }
 
