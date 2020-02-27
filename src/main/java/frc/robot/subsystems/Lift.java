@@ -32,4 +32,11 @@ public class Lift extends SubsystemBase {
 
     }
 
+    public void reset() {
+
+        liftSpeed = -1.0;
+        liftController.set(liftSpeed);
+
+    }
+
 }
