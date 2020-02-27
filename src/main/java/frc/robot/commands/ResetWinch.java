@@ -15,4 +15,9 @@ public class ResetWinch extends CommandBase {
 
     }
 
+    public void initialize() {
+        
+
+    }
+
 }
