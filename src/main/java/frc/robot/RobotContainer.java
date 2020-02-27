@@ -14,6 +14,7 @@ import frc.robot.commands.Climb;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.ResetWinch;
+import frc.robot.custom_buttons.TwoButtonCombo;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Ultrasonic;
@@ -86,6 +87,7 @@ public class RobotContainer {
     POVButton dpadRight = new POVButton(controller, 90);
     POVButton dpadDown = new POVButton(controller, 180);
     POVButton dpadLeft = new POVButton(controller, 270);
+    TwoButtonCombo aAndB = new TwoButtonCombo(controller, Constants.A_NUMBER, Constants.B_NUMBER);
 
     dpadUp.whileHeld(climbCommand);
     
