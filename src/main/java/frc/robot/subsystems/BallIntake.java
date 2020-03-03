@@ -12,6 +12,8 @@ public class BallIntake extends SubsystemBase {
 
         intakeController = new VictorSPX(Constants.ID_VICTORSPX_INTAKE);
 
+        intakeController.setInverted(false);
+
     }
 
 }
