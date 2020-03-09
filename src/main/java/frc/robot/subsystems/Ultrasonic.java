@@ -16,6 +16,7 @@ public class Ultrasonic extends SubsystemBase {
 
 
     public Ultrasonic(int port, String label){
+        System.out.println("New Ultrasonic");
         input = new AnalogInput(port);
         key = label;
     }
@@ -27,6 +28,7 @@ public class Ultrasonic extends SubsystemBase {
     }
 
     public void updateDashboard() {
+        System.out.println("Ultrasonic Dashboard Updated");
         getDistance();
         SmartDashboard.putNumber(key, value);
 

@@ -20,8 +20,6 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
-  private Command displayUltrasonic1Command;
-  private Command displayUltrasonic2Command;
 
   private RobotContainer container;
   private ColorSensor colorSensor;
@@ -35,14 +33,10 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
+    System.out.println("Robot Init");
+
     container = new RobotContainer();
     colorSensor = new ColorSensor();
-    
-    displayUltrasonic1Command = container.getDisplayU1Command();
-    displayUltrasonic2Command = container.getDisplayU2Command();
-
-    displayUltrasonic1Command.schedule();
-    displayUltrasonic2Command.schedule();
 
   }
 
