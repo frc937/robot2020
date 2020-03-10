@@ -26,6 +26,7 @@ public class AutoDrive extends CommandBase {
 
     @Override
     public boolean isFinished() {
+        return false;
 
     }
 
