@@ -47,8 +47,6 @@ public class Robot extends TimedRobot {
     displayVideo1Command = container.getDisplayV1Command();
     displayVideo2Command = container.getDisplayV2Command();
 
-    defaultDriveCommand = container.getDriveACommand();
-
     displayUltrasonic1Command.schedule();
     displayUltrasonic2Command.schedule();
 
@@ -117,6 +115,8 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     
     }
+    defaultDriveCommand = container.getDriveACommand();
+
     defaultDriveCommand.schedule();
   }
 
