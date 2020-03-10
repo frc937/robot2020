@@ -8,7 +8,10 @@ import frc.robot.commands.AutoDrive;
 public class AutoGroup extends ParallelCommandGroup {
 
     public AutoGroup(Drive drivetrain) {
-
+        addCommands(
+            new AutoDrive(drivetrain),
+            new WaitCommand(0.25)
+        );
 
     }
 
