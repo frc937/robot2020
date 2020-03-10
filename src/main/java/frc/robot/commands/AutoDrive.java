@@ -5,7 +5,11 @@ import frc.robot.subsystems.Drive;
 
 public class AutoDrive extends CommandBase {
 
-    public AutoDrive() {
+    private Drive drivetrain;
+    private double linearSpeed;
+    private double rotationalSpeed;
+
+    public AutoDrive(Drive drivesubsytem) {
 
     }
 
