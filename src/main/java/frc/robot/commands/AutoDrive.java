@@ -9,8 +9,9 @@ public class AutoDrive extends CommandBase {
     private double linearSpeed;
     private double rotationalSpeed;
 
-    public AutoDrive(Drive drivesubsytem) {
-        drivetrain = drivesubsytem;
+    public AutoDrive(Drive drivesubsystem) {
+        drivetrain = drivesubsystem;
+        addRequirements(drivesubsystem);
 
     }
 
