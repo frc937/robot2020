@@ -14,6 +14,7 @@ import frc.robot.commands.Climb;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.ResetWinch;
+import frc.robot.commands.groups.AutoGroup;
 import frc.robot.custom_buttons.TwoButtonCombo;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
@@ -52,6 +53,7 @@ public class RobotContainer {
   private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
   private final Climb climbCommand = new Climb(liftSubsystem);
   private final ResetWinch liftResetCommand = new ResetWinch(liftSubsystem);
+  private final AutoGroup autonomousCommand = new AutoGroup(driveSubsystem);
 
   public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
 
@@ -101,7 +103,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    return autonomousCommand;
   }
 
   public Command getDisplayU1Command() {
