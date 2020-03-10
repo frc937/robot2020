@@ -5,6 +5,28 @@ import frc.robot.subsystems.Drive;
 
 public class AutoDrive extends CommandBase {
 
+    public AutoDrive() {
 
+    }
+
+    @Override
+    public void initialize() {
+        
+    }
+
+    @Override
+    public void execute() {
+
+    }
+
+    @Override
+    public void end() {
+
+    }
+
+    @Override
+    public boolean isFinished() {
+        
+    }
 
 }
