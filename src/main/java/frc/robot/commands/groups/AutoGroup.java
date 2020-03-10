@@ -10,7 +10,7 @@ public class AutoGroup extends ParallelRaceGroup {
     public AutoGroup(Drive drivetrain) {
         addCommands(
             new AutoDrive(drivetrain),
-            new WaitCommand(0.25)
+            new WaitCommand(1)
         );
 
     }
