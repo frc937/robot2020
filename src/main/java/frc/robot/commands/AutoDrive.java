@@ -10,6 +10,7 @@ public class AutoDrive extends CommandBase {
     private double rotationalSpeed;
 
     public AutoDrive(Drive drivesubsytem) {
+        drivetrain = drivesubsytem;
 
     }
 
