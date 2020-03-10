@@ -20,13 +20,13 @@ public class AutoDrive extends CommandBase {
     }
 
     @Override
-    public void end() {
+    public void end(boolean interrupted) {
 
     }
 
     @Override
     public boolean isFinished() {
-        
+
     }
 
 }
