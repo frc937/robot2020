@@ -21,9 +21,14 @@ public class AutoDrive extends CommandBase {
         SmartDashboard.putString("Drive Mode", "Autonomous");
 
         linearSpeed = -0.5;
-        rotationalSpeed = 0.0;
-        drivetrain.moveArcade(linearSpeed, rotationalSpeed);
+        rotationalSpeed = 0.0; 
         
+    }
+
+    @Override
+    public void execute() {
+        drivetrain.moveArcade(linearSpeed, rotationalSpeed);
+
     }
 
     @Override
