@@ -28,6 +28,7 @@ public class AutoDrive extends CommandBase {
 
     @Override
     public void end(boolean interrupted) {
+        drivetrain.stop();
 
     }
 
