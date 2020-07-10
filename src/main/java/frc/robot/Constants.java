@@ -46,8 +46,8 @@ public final class Constants {
     public static final int RIGHT_X_AXIS = 4;
     public static final int RIGHT_Y_AXIS = 5;
 
-    public static final int LEFT_TRIGGER = 2;
-    public static final int RIGHT_TRIGGER = 3;
+    //public static final int LEFT_TRIGGER = 2;
+    //public static final int RIGHT_TRIGGER = 3;
     public static final double TRIGGER_PULL_THRESHOLD = 0.7;
 
 }
