@@ -13,11 +13,16 @@ import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.Climb;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.IntakeDown;
+import frc.robot.commands.IntakeIn;
+import frc.robot.commands.IntakeOut;
+import frc.robot.commands.IntakeUp;
 import frc.robot.commands.ResetWinch;
 import frc.robot.custom_buttons.TwoButtonCombo;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Ultrasonic;
+import frc.robot.subsystems.BallIntake;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.Drive;
 import frc.robot.Constants;
@@ -43,6 +48,7 @@ public class RobotContainer {
   private final Camera camera2 = new Camera(Constants.PORT_CAMERA_2);
   private final Drive driveSubsystem = new Drive();
   private final Lift liftSubsystem = new Lift();
+  private final BallIntake intake = new BallIntake();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
@@ -52,6 +58,10 @@ public class RobotContainer {
   private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
   private final Climb climbCommand = new Climb(liftSubsystem);
   private final ResetWinch liftResetCommand = new ResetWinch(liftSubsystem);
+  private final IntakeUp intakeUp = new IntakeUp(intake);
+  private final IntakeDown intakeDown = new IntakeDown(intake);
+  private final IntakeIn intakeIn = new IntakeIn(intake);
+  private final IntakeOut intakeOut = new IntakeOut(intake);
 
   public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
 
@@ -81,8 +91,8 @@ public class RobotContainer {
     JoystickButton startButton = new JoystickButton(controller, Constants.START_NUMBER);
     JoystickButton leftStick = new JoystickButton(controller, Constants.LEFT_STICK_NUMBER);
     JoystickButton rightStick = new JoystickButton(controller, Constants.RIGHT_STICK_NUMBER);
-    JoystickButton leftTrigger = new JoystickButton(controller, Constants.LEFT_TRIGGER);
-    JoystickButton rightTrigger = new JoystickButton(controller, Constants.RIGHT_TRIGGER);
+    //JoystickButton leftTrigger = new JoystickButton(controller, Constants.LEFT_TRIGGER);
+    //JoystickButton rightTrigger = new JoystickButton(controller, Constants.RIGHT_TRIGGER);
     POVButton dpadUp = new POVButton(controller, 0);
     POVButton dpadRight = new POVButton(controller, 90);
     POVButton dpadDown = new POVButton(controller, 180);
@@ -91,6 +101,11 @@ public class RobotContainer {
 
     dpadUp.whenHeld(climbCommand);
     aAndB.whenHeld(liftResetCommand);
+
+    dpadLeft.whenHeld(intakeDown);
+    dpadRight.whenHeld(intakeUp);
+    leftBumper.whenHeld(intakeOut);
+    rightBumper.whenHeld(intakeIn);
     
   }
 
