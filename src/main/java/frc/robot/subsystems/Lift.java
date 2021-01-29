@@ -23,7 +23,7 @@ public class Lift extends SubsystemBase {
 
     public void turn() {
 
-        liftSpeed = 0.75;
+        liftSpeed = 0.25;
         liftController1.set(liftSpeed);
         liftController2.set(liftSpeed);
 
@@ -39,7 +39,7 @@ public class Lift extends SubsystemBase {
 
     public void reset() {
 
-        liftSpeed = -0.2;
+        liftSpeed = -0.25;
         liftController1.set(liftSpeed);
         liftController2.set(liftSpeed);
 
