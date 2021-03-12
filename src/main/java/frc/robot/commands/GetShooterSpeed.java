@@ -13,7 +13,7 @@ public class GetShooterSpeed extends CommandBase {
 
     public GetShooterSpeed(boolean isIncrease) {
         speedIncreased = isIncrease;
-        speed = 1.0;
+        speed = 0.5;
     }
 
     @Override
