@@ -1,21 +1,23 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Shooter;
 
 public class ShooterDecreaseSpeed extends CommandBase {
 
     public double speed;
-    public GetShooterSpeed getShooterSpeed;
+    //public GetShooterSpeed getShooterSpeed;
 
     public ShooterDecreaseSpeed() {
-        getShooterSpeed = new GetShooterSpeed(false);
+        //getShooterSpeed = new GetShooterSpeed(false);
 
     }
 
     @Override
     public void initialize() {
-        speed = getShooterSpeed.speed;
+        speed = Shooter.shootSpeed;
         speed = speed + 0.05;
+        Shooter.shootSpeed = speed;
     }
   
     @Override
@@ -24,7 +26,7 @@ public class ShooterDecreaseSpeed extends CommandBase {
  
     @Override
     public void end(boolean interrupted) {
-        getShooterSpeed.schedule();
+        //getShooterSpeed.schedule();
 
     }
   

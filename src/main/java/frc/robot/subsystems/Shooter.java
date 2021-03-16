@@ -9,16 +9,19 @@ import frc.robot.commands.GetShooterSpeed;
 public class Shooter extends SubsystemBase {
 
     public VictorSPX shoot;
-    public GetShooterSpeed shootSpeed;
+    //public GetShooterSpeed shootSpeed;
+
+    public static double shootSpeed;
 
 
     public Shooter() {
+        shootSpeed = 0.5;
         shoot = new VictorSPX(Constants.ID_VICTORSPX_SHOOTER);
 
     }
 
     public void go() {
-        shoot.set(ControlMode.PercentOutput, shootSpeed.speed);
+        shoot.set(ControlMode.PercentOutput, shootSpeed);
 
     }
 
