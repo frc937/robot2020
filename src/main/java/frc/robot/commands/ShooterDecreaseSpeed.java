@@ -6,10 +6,8 @@ import frc.robot.subsystems.Shooter;
 public class ShooterDecreaseSpeed extends CommandBase {
 
     public double speed;
-    //public GetShooterSpeed getShooterSpeed;
 
     public ShooterDecreaseSpeed() {
-        //getShooterSpeed = new GetShooterSpeed(false);
 
     }
 
@@ -26,7 +24,6 @@ public class ShooterDecreaseSpeed extends CommandBase {
  
     @Override
     public void end(boolean interrupted) {
-        //getShooterSpeed.schedule();
 
     }
   

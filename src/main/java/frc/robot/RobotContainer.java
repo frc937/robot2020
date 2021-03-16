@@ -19,7 +19,6 @@ import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeUp;
 import frc.robot.commands.ResetWinch;
 import frc.robot.commands.Shoot;
-import frc.robot.commands.GetShooterSpeed;
 import frc.robot.commands.ShooterIncreaseSpeed;
 import frc.robot.commands.ShooterDecreaseSpeed;
 import frc.robot.custom_buttons.TwoButtonCombo;
@@ -69,7 +68,6 @@ public class RobotContainer {
   private final IntakeIn intakeIn = new IntakeIn(intake);
   private final IntakeOut intakeOut = new IntakeOut(intake);
   private final Shoot shootCommand = new Shoot(shooterSubsystem);
-  //private final GetShooterSpeed getShootSpeed = new GetShooterSpeed();
   private final ShooterIncreaseSpeed increaseShootSpeedCommand = new ShooterIncreaseSpeed();
   private final ShooterDecreaseSpeed decreaseShootSpeedCommand = new ShooterDecreaseSpeed();
 
