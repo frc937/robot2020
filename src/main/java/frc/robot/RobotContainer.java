@@ -115,9 +115,9 @@ public class RobotContainer {
     leftBumper.whenHeld(intakeOut);
     rightBumper.whenHeld(intakeIn);
 
-    dpadLeft.whenPressed(decreaseShootSpeedCommand);
-    dpadRight.whenPressed(increaseShootSpeedCommand);
-    aButton.whileHeld(shootCommand);
+    dpadLeft.whenHeld(decreaseShootSpeedCommand);
+    dpadRight.whenHeld(increaseShootSpeedCommand);
+    aButton.whenHeld(shootCommand);
 
   }
 
