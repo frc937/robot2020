@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class BallIntake extends SubsystemBase {
 
@@ -12,8 +13,8 @@ public class BallIntake extends SubsystemBase {
 
     public BallIntake() {
 
-        vertical = new VictorSPX(6);
-        spin = new VictorSPX(5);
+        vertical = new VictorSPX(Constants.ID_VICTORSPX_INTAKE_VERTICAL);
+        spin = new VictorSPX(Constants.ID_VICTORSPX_INTAKE_SPIN);
 
     }
 

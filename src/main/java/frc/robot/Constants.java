@@ -25,6 +25,9 @@ public final class Constants {
     public static final int ID_SPARKMAX_DRIVE_RIGHT = 2;
     public static final int ID_SPARKMAX_LIFT1 = 3;
     public static final int ID_SPARKMAX_LIFT2 = 4;
+    public static final int ID_VICTORSPX_INTAKE_SPIN = 5;
+    public static final int ID_VICTORSPX_INTAKE_VERTICAL = 6;
+    public static final int ID_VICTORSPX_SHOOTER = 7;
 
     public static final int CONTROLLER_NUMBER = 0;
 
