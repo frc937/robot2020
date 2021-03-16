@@ -14,7 +14,7 @@ public class ShooterDecreaseSpeed extends CommandBase {
     @Override
     public void initialize() {
         speed = Shooter.shootSpeed;
-        speed = speed + 0.05;
+        speed = speed - 0.05;
         Shooter.shootSpeed = speed;
     }
   
