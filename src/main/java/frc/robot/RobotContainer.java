@@ -54,6 +54,7 @@ public class RobotContainer {
   private final Drive driveSubsystem = new Drive();
   private final Lift liftSubsystem = new Lift();
   private final BallIntake intake = new BallIntake();
+  private final Shooter shooterSubsystem = new Shooter();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
@@ -67,6 +68,10 @@ public class RobotContainer {
   private final IntakeDown intakeDown = new IntakeDown(intake);
   private final IntakeIn intakeIn = new IntakeIn(intake);
   private final IntakeOut intakeOut = new IntakeOut(intake);
+  private final Shoot shootCommand = new Shoot(shooterSubsystem);
+  //private final GetShooterSpeed getShootSpeed = new GetShooterSpeed();
+  private final ShooterIncreaseSpeed increaseShootSpeedCommand = new ShooterIncreaseSpeed();
+  private final ShooterDecreaseSpeed decreaseShootSpeedCommand = new ShooterDecreaseSpeed();
 
   public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
 
