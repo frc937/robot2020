@@ -5,7 +5,7 @@ import frc.robot.subsystems.Shooter;
 
 public class ShooterDecreaseSpeed extends CommandBase {
 
-    public double speed;
+    //public double speed;
 
     public ShooterDecreaseSpeed() {
 
@@ -13,9 +13,10 @@ public class ShooterDecreaseSpeed extends CommandBase {
 
     @Override
     public void initialize() {
-        speed = Shooter.shootSpeed;
+        /* speed = Shooter.shootSpeed;
         speed = speed - 0.05;
-        Shooter.shootSpeed = speed;
+        Shooter.shootSpeed = speed; */
+        Shooter.shootSpeed = Shooter.shootSpeed - 0.05;
     }
   
     @Override
