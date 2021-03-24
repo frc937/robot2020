@@ -25,12 +25,15 @@ public class PIDDriveLeft extends PIDSubsystem {
 
     }
 
-    public double getMeasurements() {
-
+    public double getMeasurement() {
+        return driveEncoderLeft.getDistance();
 
     }
 
     public void useOutput(double output, double setpoint) {
+        double measurement = getMeasurement();
+        output = pidController.calculate(measurement, setpoint);
+        driveControllerLeft.pidWrite(output);
 
     }
 
