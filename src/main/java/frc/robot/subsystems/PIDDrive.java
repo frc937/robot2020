@@ -22,8 +22,8 @@ public class PIDDrive extends PIDSubsystem {
 
         driveControllerLeft = new CANSparkMax(Constants.ID_SPARKMAX_DRIVE_LEFT, MotorType.kBrushed);
         driveControllerRight = new CANSparkMax(Constants.ID_SPARKMAX_DRIVE_RIGHT, MotorType.kBrushed);
-        driveEncoderLeft = new Encoder(sourceA, sourceB);
-        driveEncoderRight = new Encoder(sourceA, sourceB);
+        driveEncoderLeft = new Encoder(Constants.PORT_ENCODER_DRIVE_LEFT_1, Constants.PORT_ENCODER_DRIVE_LEFT_2);
+        driveEncoderRight = new Encoder(Constants.PORT_ENCODER_DRIVE_RIGHT_1, Constants.PORT_ENCODER_DRIVE_RIGHT_2);
 
     }
 

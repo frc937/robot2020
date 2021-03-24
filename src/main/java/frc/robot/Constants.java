@@ -29,6 +29,11 @@ public final class Constants {
     public static final int ID_VICTORSPX_INTAKE_VERTICAL = 6;
     public static final int ID_VICTORSPX_SHOOTER = 7;
 
+    public static final int PORT_ENCODER_DRIVE_LEFT_1 = 0;
+    public static final int PORT_ENCODER_DRIVE_LEFT_2 = 1;
+    public static final int PORT_ENCODER_DRIVE_RIGHT_1 = 3;
+    public static final int PORT_ENCODER_DRIVE_RIGHT_2 = 4;
+
     public static final int CONTROLLER_NUMBER = 0;
 
     public static final int A_NUMBER = 1;
