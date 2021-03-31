@@ -6,6 +6,17 @@ import frc.robot.subsystems.pid_motors.PIDDriveRight;
 
 public class PIDDrive extends CommandBase{
 
+public PIDDriveRight pidDriveRight;
+public PIDDriveLeft pidDriveLeft;
 
+    public PIDDrive(PIDDriveLeft driveLeft, PIDDriveRight driveRight) {
+        
+        pidDriveRight = driveRight;
+        pidDriveLeft = driveLeft;
+
+        addRequirements(driveLeft);
+        addRequirements(driveRight);
+        
+    }
 
 }
