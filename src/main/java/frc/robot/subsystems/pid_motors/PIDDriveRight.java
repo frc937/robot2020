@@ -11,7 +11,7 @@ public class PIDDriveRight extends PIDSubsystem {
     private CANSparkMax driveControllerRight;
     private Encoder driveEncoderRight;
 
-    private static PIDController pidController;
+    public static PIDController pidController;
 
     public PIDDriveRight() {
         super(pidController);
@@ -32,7 +32,7 @@ public class PIDDriveRight extends PIDSubsystem {
 
     public void useOutput(double output, double setpoint) {
         double measurement = getMeasurement();
-        output = pidController.calculate(measurement, setpoint);
+        //output = pidController.calculate(measurement, setpoint);
         driveControllerRight.pidWrite(output);
 
     }

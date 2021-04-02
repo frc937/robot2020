@@ -11,7 +11,7 @@ public class PIDDriveLeft extends PIDSubsystem {
     private CANSparkMax driveControllerLeft;
     private Encoder driveEncoderLeft;
 
-    private static PIDController pidController;
+    public static PIDController pidController;
 
     public PIDDriveLeft() {
         super(pidController);
