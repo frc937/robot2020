@@ -38,6 +38,12 @@ public class Drive extends SubsystemBase {
 
     public Drive(){
 
+        pValue = 0;
+        iValue = 0;
+        dValue = 0;
+        maxVelocity = 5;
+        maxAcceleration = 20;
+
         pidController = new ProfiledPIDController(pValue, iValue, dValue, new TrapezoidProfile.Constraints(maxVelocity, maxAcceleration));
 
         driveControllerLeft = new CANSparkMax(Constants.ID_SPARKMAX_DRIVE_LEFT, MotorType.kBrushed);
