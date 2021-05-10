@@ -29,6 +29,9 @@ public class Drive extends SubsystemBase {
     private double pValue;
     private double iValue;
     private double dValue;
+    private double sValue;
+    private double vValue;
+    private double aValue;
     private double maxVelocity;
     private double maxAcceleration;
 
@@ -47,10 +50,15 @@ public class Drive extends SubsystemBase {
         pValue = 0;
         iValue = 0;
         dValue = 0;
+        sValue = 0;
+        vValue = 0;
+        aValue = 0;
         maxVelocity = 5;
         maxAcceleration = 20;
 
         pidController = new ProfiledPIDController(pValue, iValue, dValue, new TrapezoidProfile.Constraints(maxVelocity, maxAcceleration));
+
+        feedforward = new SimpleMotorFeedforward(sValue, vValue, aValue);
 
         driveControllerLeft = new CANSparkMax(Constants.ID_SPARKMAX_DRIVE_LEFT, MotorType.kBrushed);
         driveControllerRight = new CANSparkMax(Constants.ID_SPARKMAX_DRIVE_RIGHT, MotorType.kBrushed);
