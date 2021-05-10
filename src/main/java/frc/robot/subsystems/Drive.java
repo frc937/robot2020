@@ -61,7 +61,7 @@ public class Drive extends SubsystemBase {
         drivetrain = new DifferentialDrive(driveControllerLeft, driveControllerRight);
 
         driveEncoderLeft.setDistancePerPulse(1.97119);
-        // Needs a driveEncoderRight
+        driveEncoderRight.setDistancePerPulse(1.97119);
 
         driveControllerLeft.setInverted(false);
         driveControllerRight.setInverted(true);
