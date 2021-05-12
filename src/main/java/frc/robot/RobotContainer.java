@@ -29,8 +29,6 @@ import frc.robot.subsystems.BallIntake;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Shooter;
-import frc.robot.subsystems.pid_motors.PIDDriveLeft;
-import frc.robot.subsystems.pid_motors.PIDDriveRight;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -56,8 +54,6 @@ public class RobotContainer {
   private final Lift liftSubsystem = new Lift();
   private final BallIntake intake = new BallIntake();
   private final Shooter shooterSubsystem = new Shooter();
-  private final PIDDriveLeft pidMotorLeft = new PIDDriveLeft();
-  private final PIDDriveRight pidMotorRight = new PIDDriveRight();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
