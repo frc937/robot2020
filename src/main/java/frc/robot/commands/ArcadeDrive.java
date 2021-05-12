@@ -21,6 +21,10 @@ public class ArcadeDrive extends CommandBase {
     @Override
     public void initialize() {
         SmartDashboard.putString("Drive Mode", "Arcade");
+        /************************************************************************\
+        | Remove line 27 after running once (if Distance Input is on SmartDash)  |
+        \************************************************************************/
+        SmartDashboard.putNumber("Distance Input", 42.55);
 
     }
 
