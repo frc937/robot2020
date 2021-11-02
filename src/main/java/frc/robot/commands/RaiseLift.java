@@ -3,11 +3,11 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Lift;
 
-public class Climb extends CommandBase {
+public class RaiseLift extends CommandBase {
 
     private Lift liftArm;
 
-    public Climb(Lift subsystemLift) {
+    public RaiseLift(Lift subsystemLift) {
 
         liftArm = subsystemLift;
 
@@ -17,7 +17,7 @@ public class Climb extends CommandBase {
 
     @Override
     public void initialize() {
-        liftArm.turn();
+        liftArm.turnSlow();
 
     }
 
