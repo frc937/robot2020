@@ -108,8 +108,10 @@ public class RobotContainer {
     POVButton dpadDown = new POVButton(controller, 180);
     POVButton dpadLeft = new POVButton(controller, 270);
     TwoButtonCombo aAndB = new TwoButtonCombo(controller, Constants.A_NUMBER, Constants.B_NUMBER);
+    TwoButtonCombo xAndY = new TwoButtonCombo(controller, Constants.X_NUMBER, Constants.Y_NUMBER);
 
-    yButton.whenHeld(climbCommand);
+    yButton.whenHeld(raiseLiftCommand);
+    xAndY.whenHeld(raiseRobotCommand);
     aAndB.whenHeld(liftResetCommand);
 
     dpadDown.whenHeld(intakeDown);
