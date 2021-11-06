@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.ArcadeDriveSwapped;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.IntakeDown;
@@ -62,6 +63,7 @@ public class RobotContainer {
   private final InstantCommand dispVideo1 = new InstantCommand(camera1::startCamera, camera1);
   private final InstantCommand dispVideo2 = new InstantCommand(camera2::startCamera, camera2);
   private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
+  private final ArcadeDriveSwapped driveB = new ArcadeDriveSwapped(driveSubsystem);
   private final RaiseLift raiseLiftCommand = new RaiseLift(liftSubsystem);
   private final RaiseRobot raiseRobotCommand = new RaiseRobot(liftSubsystem);
   private final ResetWinch liftResetCommand = new ResetWinch(liftSubsystem);
@@ -137,7 +139,6 @@ public class RobotContainer {
 
   public Command getDisplayU1Command() {
     return dispUltrasonic1;
-
   }
 
   public Command getDisplayU2Command() {
@@ -146,6 +147,10 @@ public class RobotContainer {
 
   public Command getDriveACommand() {
     return driveA;
+  }
+
+  public Command getDriveBCommand() {
+    return driveB;
   }
 
   public Command getDisplayV1Command() {
