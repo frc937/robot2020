@@ -29,12 +29,9 @@ public class Robot extends TimedRobot {
   private Command displayVideo1Command;
   private Command displayVideo2Command;
   private Command defaultDriveCommand;
-  //private Command swappedDriveCommand;
 
   private RobotContainer container;
   private ColorSensor colorSensor;
-
-  private boolean driveIsSwapped;
 
 
   /**
@@ -55,15 +52,12 @@ public class Robot extends TimedRobot {
     displayVideo2Command = container.getDisplayV2Command();
 
     defaultDriveCommand = container.getDriveACommand();
-    //swappedDriveCommand = container.getDriveBCommand();
 
     displayUltrasonic1Command.schedule();
     displayUltrasonic2Command.schedule();
 
     displayVideo1Command.initialize();
     displayVideo2Command.initialize();
-
-    //driveIsSwapped = false;
 
   }
 
