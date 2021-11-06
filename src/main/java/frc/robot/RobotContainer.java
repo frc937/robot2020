@@ -34,6 +34,7 @@ import frc.robot.subsystems.Shooter;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.ScheduleCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 
@@ -71,6 +72,8 @@ public class RobotContainer {
   private final IntakeDown intakeDown = new IntakeDown(intake);
   private final IntakeIn intakeIn = new IntakeIn(intake);
   private final IntakeOut intakeOut = new IntakeOut(intake);
+  private final ScheduleCommand arcadeScheduleDefault = new ScheduleCommand(driveA);
+  private final ScheduleCommand arcadeScheduleSwapped = new ScheduleCommand(driveB);
   private final Shoot shootCommand = new Shoot(shooterSubsystem);
   private final ShooterIncreaseSpeed increaseShootSpeedCommand = new ShooterIncreaseSpeed();
   private final ShooterDecreaseSpeed decreaseShootSpeedCommand = new ShooterDecreaseSpeed();
