@@ -19,12 +19,12 @@ public class BallIntake extends SubsystemBase {
     }
 
     public void up() {
-        vertical.set(ControlMode.PercentOutput, 1.0);
+        vertical.set(ControlMode.PercentOutput, -1.0);
 
     }
 
     public void down() {
-        vertical.set(ControlMode.PercentOutput, -1.0);
+        vertical.set(ControlMode.PercentOutput, 1.0);
 
     }
 
