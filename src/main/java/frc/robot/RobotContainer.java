@@ -124,6 +124,9 @@ public class RobotContainer {
     leftBumper.whenHeld(intakeOut);
     rightBumper.whenHeld(intakeIn);
 
+    aButton.whenPressed(arcadeScheduleDefault);
+    bButton.whenPressed(arcadeScheduleSwapped);
+
     //dpadLeft.whenHeld(decreaseShootSpeedCommand);
     //dpadRight.whenHeld(increaseShootSpeedCommand);
     //aButton.whenHeld(shootCommand);
