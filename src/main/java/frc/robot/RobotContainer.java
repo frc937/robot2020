@@ -12,10 +12,24 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.DisplayUltrasonic;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.IntakeDown;
+import frc.robot.commands.IntakeIn;
+import frc.robot.commands.IntakeOut;
+import frc.robot.commands.IntakeUp;
+import frc.robot.commands.RaiseLift;
+import frc.robot.commands.RaiseRobot;
+import frc.robot.commands.ResetWinch;
+import frc.robot.commands.Shoot;
+import frc.robot.commands.ShooterIncreaseSpeed;
+import frc.robot.commands.ShooterDecreaseSpeed;
+import frc.robot.custom_buttons.TwoButtonCombo;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Ultrasonic;
+import frc.robot.subsystems.BallIntake;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.Drive;
+import frc.robot.subsystems.Shooter;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -38,6 +52,9 @@ public class RobotContainer {
   private final Camera camera1 = new Camera(Constants.PORT_CAMERA_1);
   private final Camera camera2 = new Camera(Constants.PORT_CAMERA_2);
   private final Drive driveSubsystem = new Drive();
+  private final Lift liftSubsystem = new Lift();
+  private final BallIntake intake = new BallIntake();
+  private final Shooter shooterSubsystem = new Shooter();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DisplayUltrasonic dispUltrasonic1 = new DisplayUltrasonic(() -> ultrasonic1.updateDashboard(), ultrasonic1);
@@ -45,6 +62,16 @@ public class RobotContainer {
   private final InstantCommand dispVideo1 = new InstantCommand(camera1::startCamera, camera1);
   private final InstantCommand dispVideo2 = new InstantCommand(camera2::startCamera, camera2);
   private final ArcadeDrive driveA = new ArcadeDrive(driveSubsystem);
+  private final RaiseLift raiseLiftCommand = new RaiseLift(liftSubsystem);
+  private final RaiseRobot raiseRobotCommand = new RaiseRobot(liftSubsystem);
+  private final ResetWinch liftResetCommand = new ResetWinch(liftSubsystem);
+  private final IntakeUp intakeUp = new IntakeUp(intake);
+  private final IntakeDown intakeDown = new IntakeDown(intake);
+  private final IntakeIn intakeIn = new IntakeIn(intake);
+  private final IntakeOut intakeOut = new IntakeOut(intake);
+  private final Shoot shootCommand = new Shoot(shooterSubsystem);
+  private final ShooterIncreaseSpeed increaseShootSpeedCommand = new ShooterIncreaseSpeed();
+  private final ShooterDecreaseSpeed decreaseShootSpeedCommand = new ShooterDecreaseSpeed();
 
   public static XboxController controller = new XboxController(Constants.CONTROLLER_NUMBER);
 
@@ -74,13 +101,28 @@ public class RobotContainer {
     JoystickButton startButton = new JoystickButton(controller, Constants.START_NUMBER);
     JoystickButton leftStick = new JoystickButton(controller, Constants.LEFT_STICK_NUMBER);
     JoystickButton rightStick = new JoystickButton(controller, Constants.RIGHT_STICK_NUMBER);
-    JoystickButton leftTrigger = new JoystickButton(controller, Constants.LEFT_TRIGGER);
-    JoystickButton rightTrigger = new JoystickButton(controller, Constants.RIGHT_TRIGGER);
+    //JoystickButton leftTrigger = new JoystickButton(controller, Constants.LEFT_TRIGGER);
+    //JoystickButton rightTrigger = new JoystickButton(controller, Constants.RIGHT_TRIGGER);
     POVButton dpadUp = new POVButton(controller, 0);
     POVButton dpadRight = new POVButton(controller, 90);
     POVButton dpadDown = new POVButton(controller, 180);
     POVButton dpadLeft = new POVButton(controller, 270);
-    
+    TwoButtonCombo aAndB = new TwoButtonCombo(controller, Constants.A_NUMBER, Constants.B_NUMBER);
+    TwoButtonCombo xAndY = new TwoButtonCombo(controller, Constants.X_NUMBER, Constants.Y_NUMBER);
+
+    yButton.whenHeld(raiseLiftCommand);
+    xAndY.whenHeld(raiseRobotCommand);
+    aAndB.whenHeld(liftResetCommand);
+
+    dpadDown.whenHeld(intakeDown);
+    dpadUp.whenHeld(intakeUp);
+    leftBumper.whenHeld(intakeOut);
+    rightBumper.whenHeld(intakeIn);
+
+    dpadLeft.whenHeld(decreaseShootSpeedCommand);
+    dpadRight.whenHeld(increaseShootSpeedCommand);
+    aButton.whenHeld(shootCommand);
+
   }
 
   /**
